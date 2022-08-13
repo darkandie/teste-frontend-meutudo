@@ -9,7 +9,7 @@ export const Header = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: ${(props) => props.theme.colors.fontBlack};
+  background: ${({ theme }) => theme.colors.fontBlack};
 `;
 
 export const Logo = styled.img`
@@ -32,7 +32,7 @@ export const Nav = styled.ul`
       font-weight: 400;
       margin-left: 40px;
       text-decoration: none;
-      color: ${(props) => props.theme.colors.fontWhite};
+      color: ${({ theme }) => theme.colors.fontWhite};
     }
   }
 `;

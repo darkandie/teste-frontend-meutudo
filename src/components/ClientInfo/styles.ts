@@ -7,18 +7,18 @@ export const Container = styled.div`
   justify-content: center;
   text-align: center;
   gap: 10px;
-  background: ${(props) => props.theme.colors.fontBlack};
+  background: ${({ theme }) => theme.colors.fontBlack};
   border-radius: 0 0 560px 0;
   h3 {
-    color: ${(props) => props.theme.colors.fontWhite};
+    color: ${({ theme }) => theme.colors.fontWhite};
     margin-top: 10px;
   }
   h4 {
-    color: ${(props) => props.theme.colors.fontWhite};
+    color: ${({ theme }) => theme.colors.fontWhite};
     font-weight: 200;
   }
   h2 {
     margin-bottom: 20px;
-    color: ${(props) => props.theme.colors.primary};
+    color: ${({ theme }) => theme.colors.primary};
   }
 `;

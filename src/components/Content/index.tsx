@@ -1,5 +1,3 @@
-import React from "react";
-
 import creditCard from "../../assets/images/creditCard-2.png";
 import image from "../../assets/images/emprestimo.png";
 import newLoan from "../../assets/images/newLoan-2.png";
@@ -27,11 +25,11 @@ const Content = () => {
             <h4>Portabilidade</h4>
             <p>Até R$ 2.000,00</p>
           </Card>
-          <Card>
+          <Card className="disabled">
             <img src={refinancing} alt="" />
             <h4>Refinanciamento</h4>
           </Card>
-          <Card>
+          <Card className="disabled">
             <img src={creditCard} alt="" />
             <h4>
               Cartão de Crédito

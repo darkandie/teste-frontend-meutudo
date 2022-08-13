@@ -5,7 +5,7 @@ export const Container = styled.div`
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  background: ${(props) => props.theme.colors.background};
+  background: ${({ theme }) => theme.colors.background};
 `;
 
 export const Options = styled.div`
@@ -28,17 +28,25 @@ export const Card = styled.div`
   border-radius: 20px;
   padding: 20px;
   box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
-  border: 1px solid ${(props) => props.theme.colors.disabled};
+  border: 1px solid ${({ theme }) => theme.colors.disabled};
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  cursor: pointer;
   gap: 10px;
+  &.disabled {
+    cursor: context-menu;
+    img,
+    h4 {
+      opacity: 0.2;
+    }
+  }
   img {
     width: 80px;
   }
   p {
-    color: ${(props) => props.theme.colors.primary};
+    color: ${({ theme }) => theme.colors.primary};
   }
 `;
 

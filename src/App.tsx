@@ -1,15 +1,17 @@
+import { BrowserRouter as Router } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 
-import Home from "./pages/Home";
+import AppRoutes from "./routes";
 import GlobalStyle from "./styles/global";
 import theme from "./styles/theme";
 
 const App = () => {
   return (
     <ThemeProvider theme={theme}>
-      <GlobalStyle />
-
-      <Home />
+      <Router>
+        <GlobalStyle />
+        <AppRoutes />
+      </Router>
     </ThemeProvider>
   );
 };

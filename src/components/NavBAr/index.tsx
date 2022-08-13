@@ -1,4 +1,3 @@
-import React from "react";
 import { AiOutlineBell } from "react-icons/ai";
 
 import logo from "../../assets/images/tudo-logo-2.png";

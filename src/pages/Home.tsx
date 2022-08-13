@@ -1,15 +1,10 @@
-import React from "react";
-
-import Clientinfo from "../components/ClientInfo";
-import Content from "../components/Content";
-import Layout from "../components/LayoutContainer";
-import NavBar from "../components/NavBAr";
+import { ClientInfo, Content, Layout, NavBar } from "../components";
 
 const Home = () => {
   return (
     <Layout>
       <NavBar />
-      <Clientinfo />
+      <ClientInfo />
       <Content />
     </Layout>
   );
