@@ -1,5 +1,4 @@
-import { HeaderTitle, Layout, NavBar } from "../components";
-import ContentValues from "../components/ContentValues";
+import { HeaderTitle, Layout, NavBar, ContentValues } from "../components";
 
 const ValuePage = () => {
   return (
