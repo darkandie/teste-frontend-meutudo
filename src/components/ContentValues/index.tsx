@@ -1,4 +1,5 @@
 import { emprestimo } from "../../assets";
+import { useGetValuesQuery } from "../../services/api";
 import {
   Container,
   Options,
@@ -12,22 +13,26 @@ import {
 } from "./styles";
 
 const ContentValues = () => {
+  const { data, isLoading } = useGetValuesQuery();
+
+  if (isLoading) return <h1>...Carregando</h1>;
+
   return (
     <Container>
       <Options>
         <h1>De quanto você precisa?</h1>
         <CardContainer>
           <Card>
-            <h3>R$ 300,00</h3>
+            <h3>{`R$ ${data?.suggestionValues[3]}`}</h3>
           </Card>
           <Card>
-            <h3>R$ 2.660,00</h3>
+            <h3>{`R$ ${data?.suggestionValues[2]}`}</h3>
           </Card>
           <Card>
-            <h3>R$ 5.030,00</h3>
+            <h3>{`R$ ${data?.suggestionValues[1]}`}</h3>
           </Card>
           <Card>
-            <h3>R$ 7.407,93</h3>
+            <h3>{`R$ ${data?.suggestionValues[0]}`}</h3>
           </Card>
         </CardContainer>
         <SimulateContainer>

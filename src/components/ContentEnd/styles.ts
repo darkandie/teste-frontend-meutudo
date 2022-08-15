@@ -15,6 +15,7 @@ export const CardContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   max-width: 600px;
+  width: 100%;
   margin-top: 30px;
 `;
 
@@ -30,7 +31,10 @@ export const Card = styled.div`
   display: flex;
   flex-direction: column;
   cursor: pointer;
-  gap: 10px;
+  transition: 0.5s;
+  &:hover {
+    transform: translateY(-10px);
+  }
   h3 {
     font-weight: 500;
   }
@@ -48,7 +52,11 @@ export const TopCard = styled.div`
   }
 `;
 
-export const ImgBox = styled.div``;
+export const ImgBox = styled.div`
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
 
 export const Desc = styled.div`
   border-right: 1px solid ${({ theme }) => theme.colors.fontBlack};

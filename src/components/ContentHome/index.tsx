@@ -5,9 +5,14 @@ import {
   portability,
   refinancing,
 } from "../../assets";
+import { useGetOportunitiesQuery } from "../../services/api";
 import { Container, Options, Card, ImgBox, Img, CardContainer } from "./styles";
 
 const Content = () => {
+  const { data, isLoading } = useGetOportunitiesQuery();
+
+  if (isLoading) return <h1>...Carregando</h1>;
+
   return (
     <Container>
       <Options>
@@ -20,12 +25,12 @@ const Content = () => {
               <br />
               Empréstimo
             </h4>
-            <p>Até R$ 3.058,10</p>
+            <p>{`Até R$ ${data?.newLoanMaxValue}`}</p>
           </Card>
           <Card>
             <img src={portability} alt="" />
             <h4>Portabilidade</h4>
-            <p>Até R$ 2.000,00</p>
+            <p>{`Até R$ ${data?.portabilityMaxValue}`}</p>
           </Card>
           <Card className="disabled">
             <img src={refinancing} alt="" />

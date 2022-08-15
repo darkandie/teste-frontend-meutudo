@@ -1,4 +1,5 @@
 import { emprestimo } from "../../assets";
+import { useGetPeriodsQuery } from "../../services/api";
 import {
   Container,
   Options,
@@ -12,22 +13,26 @@ import {
 } from "./styles";
 
 const ContentPeriod = () => {
+  const { data, isLoading } = useGetPeriodsQuery();
+
+  if (isLoading) return <h1>...Carregando</h1>;
+
   return (
     <Container>
       <Options>
         <h1>Em quanto tempo você quer pagar?</h1>
         <CardContainer>
           <Card>
-            <h3>48 meses</h3>
+            <h3>{`${data?.suggestionInstallments[3]} meses`}</h3>
           </Card>
           <Card>
-            <h3>60 meses</h3>
+            <h3>{`${data?.suggestionInstallments[2]} meses`}</h3>
           </Card>
           <Card>
-            <h3>72 meses</h3>
+            <h3>{`${data?.suggestionInstallments[1]} meses`}</h3>
           </Card>
           <Card>
-            <h3>84 meses</h3>
+            <h3>{`${data?.suggestionInstallments[0]} meses`}</h3>
           </Card>
         </CardContainer>
         <SimulateContainer>
