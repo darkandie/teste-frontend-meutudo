@@ -1,8 +1,10 @@
-import creditCard from "../../assets/images/creditCard-2.png";
-import image from "../../assets/images/emprestimo.png";
-import newLoan from "../../assets/images/newLoan-2.png";
-import portability from "../../assets/images/portability-2.png";
-import refinancing from "../../assets/images/refinancing-2.png";
+import {
+  credit,
+  emprestimo,
+  newloan,
+  portability,
+  refinancing,
+} from "../../assets";
 import { Container, Options, Card, ImgBox, Img, CardContainer } from "./styles";
 
 const Content = () => {
@@ -12,7 +14,7 @@ const Content = () => {
         <h1>Oportunidades</h1>
         <CardContainer>
           <Card>
-            <img src={newLoan} alt="" />
+            <img src={newloan} alt="" />
             <h4>
               Novo
               <br />
@@ -30,7 +32,7 @@ const Content = () => {
             <h4>Refinanciamento</h4>
           </Card>
           <Card className="disabled">
-            <img src={creditCard} alt="" />
+            <img src={credit} alt="" />
             <h4>
               Cartão de Crédito
               <br />
@@ -40,7 +42,7 @@ const Content = () => {
         </CardContainer>
       </Options>
       <ImgBox>
-        <Img src={image} />
+        <Img src={emprestimo} />
       </ImgBox>
     </Container>
   );

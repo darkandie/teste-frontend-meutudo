@@ -8,7 +8,7 @@ export const Container = styled.div`
   text-align: center;
   gap: 10px;
   background: ${({ theme }) => theme.colors.fontBlack};
-  border-radius: 0 0 560px 0;
+  border-radius: 0 0 500px 0;
   h3 {
     color: ${({ theme }) => theme.colors.fontWhite};
     margin-top: 10px;
