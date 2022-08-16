@@ -21,4 +21,7 @@ export const Container = styled.div`
     margin-bottom: 20px;
     color: ${({ theme }) => theme.colors.primary};
   }
+  @media (max-width: 768px) {
+    border-radius: 0 0 40px 0;
+  }
 `;

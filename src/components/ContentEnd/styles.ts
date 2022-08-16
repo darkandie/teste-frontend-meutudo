@@ -9,6 +9,13 @@ export const Container = styled.div`
 
 export const Options = styled.div`
   padding: 100px;
+  @media (max-width: 768px) {
+    padding: 10px;
+    h1 {
+      margin: 30px 0 0 10px;
+      font-size: 15px;
+    }
+  }
 `;
 
 export const CardContainer = styled.div`

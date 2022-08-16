@@ -10,6 +10,13 @@ export const Container = styled.div`
 
 export const Options = styled.div`
   padding: 100px;
+  @media (max-width: 768px) {
+    padding: 0;
+    h1 {
+      margin: 30px 0 0 10px;
+      font-size: 15px;
+    }
+  }
 `;
 
 export const CardContainer = styled.div`
@@ -20,6 +27,11 @@ export const CardContainer = styled.div`
   gap: 40px;
   width: 100%;
   justify-content: space-around;
+  @media (max-width: 768px) {
+    margin-top: 10px;
+    padding: 5px;
+    gap: 20px;
+  }
 `;
 
 export const Card = styled.div`
@@ -43,15 +55,32 @@ export const Card = styled.div`
     }
   }
   img {
-    width: 80px;
+    width: 50px;
   }
   p {
     color: ${({ theme }) => theme.colors.primary};
   }
+  @media (max-width: 768px) {
+    width: 160px;
+    height: 160px;
+    img {
+      width: 40px;
+    }
+    p {
+      font-size: 15px;
+    }
+  }
 `;
 
-export const ImgBox = styled.div``;
+export const ImgBox = styled.div`
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
 
 export const Img = styled.img`
   width: 90%;
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;

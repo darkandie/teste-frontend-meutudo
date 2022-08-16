@@ -1,4 +1,10 @@
-import { AiOutlineBell } from "react-icons/ai";
+import {
+  AiOutlineBell,
+  AiOutlineCopy,
+  AiOutlineQuestionCircle,
+  AiOutlineUser,
+  AiOutlineHome,
+} from "react-icons/ai";
 
 import { logo } from "../../assets";
 import { Header, Logo, Nav } from "./styles";
@@ -9,19 +15,23 @@ const NavBar = () => {
       <Logo src={logo} />
       <Nav>
         <li>
-          <a href="/">Inicio</a>
+          <AiOutlineHome className="icon" size={22} />
+          <p>Inicio</p>
         </li>
         <li>
-          <a href="/">Contratos</a>
+          <AiOutlineCopy className="icon" size={22} />
+          <p>Contratos</p>
         </li>
         <li>
-          <a href="/">Dúvidas</a>
+          <AiOutlineQuestionCircle className="icon" size={22} />
+          <p>Dúvidas</p>
         </li>
         <li>
-          <a href="/">Conta</a>
+          <AiOutlineUser className="icon" size={22} />
+          <p>Conta</p>
         </li>
-        <AiOutlineBell size={32} color="#fff" className="icon" />
       </Nav>
+      <AiOutlineBell size={32} color="#fff" className="iconNav" />
     </Header>
   );
 };

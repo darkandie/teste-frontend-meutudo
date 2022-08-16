@@ -6,6 +6,7 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: auto;
 `;
 
 export const Content = styled.div`
@@ -17,4 +18,8 @@ export const Content = styled.div`
   height: 100vh;
   box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
   background: ${({ theme }) => theme.colors.background};
+  @media (max-width: 768px) {
+    width: 100%;
+    box-shadow: none;
+  }
 `;

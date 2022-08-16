@@ -10,6 +10,13 @@ export const Container = styled.div`
 
 export const Options = styled.div`
   padding: 100px;
+  @media (max-width: 768px) {
+    padding: 0;
+    h1 {
+      margin: 30px 0 0 10px;
+      font-size: 15px;
+    }
+  }
 `;
 
 export const CardContainer = styled.div`
@@ -20,13 +27,18 @@ export const CardContainer = styled.div`
   gap: 40px;
   width: 100%;
   justify-content: space-around;
+  @media (max-width: 768px) {
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+  }
 `;
 
 export const Card = styled.div`
   text-align: center;
   width: 220px;
   height: 80px;
-  border-radius: 20px;
+  border-radius: 10px;
   padding: 20px;
   box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
   border: 1px solid ${({ theme }) => theme.colors.disabled};
@@ -38,9 +50,17 @@ export const Card = styled.div`
   h3 {
     font-weight: 500;
   }
+  @media (max-width: 768px) {
+    width: 160px;
+    height: 60px;
+  }
 `;
 
-export const ImgBox = styled.div``;
+export const ImgBox = styled.div`
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
 
 export const Img = styled.img`
   width: 90%;
