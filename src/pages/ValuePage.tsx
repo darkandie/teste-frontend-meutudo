@@ -1,11 +1,18 @@
-import { HeaderTitle, Layout, NavBar, ContentValues } from "../components";
+import { Suspense, lazy } from "react";
+
+import { Layout, NavBar } from "../components";
+
+const HeaderTitle = lazy(() => import("../components/HeaderTitle"));
+const ContentValues = lazy(() => import("../components/ContentValues"));
 
 const ValuePage = () => {
   return (
     <Layout>
       <NavBar />
-      <HeaderTitle name="Valores" />
-      <ContentValues />
+      <Suspense fallback={<h3>Carregando ...</h3>}>
+        <HeaderTitle name="Valores" />
+        <ContentValues />
+      </Suspense>
     </Layout>
   );
 };

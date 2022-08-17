@@ -48,7 +48,7 @@ export const Nav = styled.ul`
     }
   }
   @media (max-width: 768px) {
-    position: absolute;
+    position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;

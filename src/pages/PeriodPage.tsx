@@ -1,11 +1,18 @@
-import { HeaderTitle, Layout, NavBar, ContentPeriod } from "../components";
+import { Suspense, lazy } from "react";
+
+import { Layout, NavBar } from "../components";
+
+const HeaderTitle = lazy(() => import("../components/HeaderTitle"));
+const ContentPeriod = lazy(() => import("../components/ContentPeriod"));
 
 const PeriodPage = () => {
   return (
     <Layout>
       <NavBar />
-      <HeaderTitle name="Periodo" />
-      <ContentPeriod />
+      <Suspense fallback={<h3>Carregando ...</h3>}>
+        <HeaderTitle name="Periodo" />
+        <ContentPeriod />
+      </Suspense>
     </Layout>
   );
 };
