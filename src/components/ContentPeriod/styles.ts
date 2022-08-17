@@ -6,6 +6,18 @@ export const Container = styled.div`
   justify-content: space-between;
   width: 100%;
   background: ${({ theme }) => theme.colors.background};
+  animation-name: container;
+  animation-duration: 1s;
+  @keyframes container {
+    0% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 `;
 
 export const Options = styled.div`

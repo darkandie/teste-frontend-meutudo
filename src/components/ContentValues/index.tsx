@@ -1,7 +1,10 @@
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 import { emprestimo } from "../../assets";
+import { addValue } from "../../redux/contract/contractSlice";
 import { useGetValuesQuery } from "../../services/api";
+import Loader from "../Loader";
 import {
   Container,
   Options,
@@ -15,13 +18,19 @@ import {
 } from "./styles";
 
 const ContentValues = () => {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const { data, isLoading } = useGetValuesQuery();
 
-  if (isLoading) return <h1>...Carregando</h1>;
+  if (isLoading) return <Loader />;
 
   const handleValue = (value?: number) => {
-    navigate("/period", { state: { value } });
+    if (value) {
+      dispatch(addValue(value));
+      navigate("/period");
+    } else {
+      alert("Selecione um valor");
+    }
   };
 
   return (

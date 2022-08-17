@@ -1,4 +1,5 @@
 import { AiOutlineLeft } from "react-icons/ai";
+import { useNavigate } from "react-router-dom";
 
 import { Container } from "./styles";
 
@@ -7,9 +8,15 @@ type PropType = {
 };
 
 const HeaderTitle = ({ name }: PropType) => {
+  const navigate = useNavigate();
   return (
     <Container>
-      <AiOutlineLeft color="white" size={32} className="icon" />
+      <AiOutlineLeft
+        color="white"
+        size={32}
+        className="icon"
+        onClick={() => navigate(-1)}
+      />
       <h2>{name}</h2>
     </Container>
   );

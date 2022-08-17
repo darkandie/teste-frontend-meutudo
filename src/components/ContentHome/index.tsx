@@ -8,12 +8,13 @@ import {
   refinancing,
 } from "../../assets";
 import { useGetOportunitiesQuery } from "../../services/api";
+import Loader from "../Loader";
 import { Container, Options, Card, ImgBox, Img, CardContainer } from "./styles";
 
 const Content = () => {
   const { data, isLoading } = useGetOportunitiesQuery();
 
-  if (isLoading) return <h1>...Carregando</h1>;
+  if (isLoading) return <Loader />;
 
   return (
     <Container>

@@ -26,6 +26,7 @@
     "prettier"
   ],
   "rules": {
+    "no-alert": "off",
     "camelcase": "off",
     "import/no-unresolved": "error",
     "react/function-component-definition": [

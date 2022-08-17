@@ -1,7 +1,8 @@
 import { AiOutlineRight, AiOutlineQuestionCircle } from "react-icons/ai";
-import { useLocation } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 import { emprestimo, logo_1 } from "../../assets";
+import { RootState } from "../../redux/store";
 import {
   Container,
   Options,
@@ -17,11 +18,7 @@ import {
 } from "./styles";
 
 const ComponentEnd = () => {
-  const location = useLocation();
-
-  const values = location.state;
-
-  console.log(values, "values");
+  const contract = useSelector((state: RootState) => state.contract);
   return (
     <Container>
       <Options>
@@ -32,7 +29,7 @@ const ComponentEnd = () => {
               <img src={logo_1} alt="" />
               <Desc>
                 <h5>
-                  <strong>60 parcelas de</strong>
+                  <strong>{`${contract.period} parcelas de`}</strong>
                 </h5>
                 <h3>R$ 372,65</h3>
                 <h5>Total de R$ 5.030,00</h5>

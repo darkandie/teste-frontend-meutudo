@@ -1,7 +1,10 @@
-import { useLocation, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 import { emprestimo } from "../../assets";
+import { addPeriod } from "../../redux/contract/contractSlice";
 import { useGetPeriodsQuery } from "../../services/api";
+import Loader from "../Loader";
 import {
   Container,
   Options,
@@ -15,15 +18,19 @@ import {
 } from "./styles";
 
 const ContentPeriod = () => {
-  const location = useLocation();
   const navigate = useNavigate();
-  const value = location.state;
+  const dispatch = useDispatch();
   const { data, isLoading } = useGetPeriodsQuery();
 
-  if (isLoading) return <h1>...Carregando</h1>;
+  if (isLoading) return <Loader />;
 
   const handlePeriod = (period?: number) => {
-    navigate("/endpage", { state: { value, period } });
+    if (period) {
+      dispatch(addPeriod(period));
+      navigate("/endpage");
+    } else {
+      alert("Selecione um valor");
+    }
   };
 
   return (
