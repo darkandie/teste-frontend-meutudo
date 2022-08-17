@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import {
   credit,
   emprestimo,
@@ -19,18 +21,22 @@ const Content = () => {
         <h1>Oportunidades</h1>
         <CardContainer>
           <Card>
-            <img src={newloan} alt="" />
-            <h4>
-              Novo
-              <br />
-              Empréstimo
-            </h4>
-            <p>{`Até R$ ${data?.newLoanMaxValue}`}</p>
+            <Link to="/values">
+              <img src={newloan} alt="" />
+              <h4>
+                Novo
+                <br />
+                Empréstimo
+              </h4>
+              <p>{`Até R$ ${data?.newLoanMaxValue}`}</p>
+            </Link>
           </Card>
           <Card>
-            <img src={portability} alt="" />
-            <h4>Portabilidade</h4>
-            <p>{`Até R$ ${data?.portabilityMaxValue}`}</p>
+            <Link to="/values">
+              <img src={portability} alt="" />
+              <h4>Portabilidade</h4>
+              <p>{`Até R$ ${data?.portabilityMaxValue}`}</p>
+            </Link>
           </Card>
           <Card className="disabled">
             <img src={refinancing} alt="" />

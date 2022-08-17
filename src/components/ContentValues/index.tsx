@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router-dom";
+
 import { emprestimo } from "../../assets";
 import { useGetValuesQuery } from "../../services/api";
 import {
@@ -13,25 +15,30 @@ import {
 } from "./styles";
 
 const ContentValues = () => {
+  const navigate = useNavigate();
   const { data, isLoading } = useGetValuesQuery();
 
   if (isLoading) return <h1>...Carregando</h1>;
+
+  const handleValue = (value?: number) => {
+    navigate("/period", { state: { value } });
+  };
 
   return (
     <Container>
       <Options>
         <h1>De quanto você precisa?</h1>
         <CardContainer>
-          <Card>
+          <Card onClick={() => handleValue(data?.suggestionValues[3])}>
             <h3>{`R$ ${data?.suggestionValues[3]}`}</h3>
           </Card>
-          <Card>
+          <Card onClick={() => handleValue(data?.suggestionValues[2])}>
             <h3>{`R$ ${data?.suggestionValues[2]}`}</h3>
           </Card>
-          <Card>
+          <Card onClick={() => handleValue(data?.suggestionValues[1])}>
             <h3>{`R$ ${data?.suggestionValues[1]}`}</h3>
           </Card>
-          <Card>
+          <Card onClick={() => handleValue(data?.suggestionValues[0])}>
             <h3>{`R$ ${data?.suggestionValues[0]}`}</h3>
           </Card>
         </CardContainer>

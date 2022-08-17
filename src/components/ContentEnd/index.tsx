@@ -1,4 +1,5 @@
 import { AiOutlineRight, AiOutlineQuestionCircle } from "react-icons/ai";
+import { useLocation } from "react-router-dom";
 
 import { emprestimo, logo_1 } from "../../assets";
 import {
@@ -16,6 +17,11 @@ import {
 } from "./styles";
 
 const ComponentEnd = () => {
+  const location = useLocation();
+
+  const values = location.state;
+
+  console.log(values, "values");
   return (
     <Container>
       <Options>

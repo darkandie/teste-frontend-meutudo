@@ -54,11 +54,16 @@ export const Card = styled.div`
       opacity: 0.2;
     }
   }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
   img {
     width: 50px;
   }
   p {
     color: ${({ theme }) => theme.colors.primary};
+    margin: 5px 0;
   }
   @media (max-width: 768px) {
     width: 160px;
