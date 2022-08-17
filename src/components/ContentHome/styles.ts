@@ -39,6 +39,10 @@ export const CardContainer = styled.div`
   gap: 40px;
   width: 100%;
   justify-content: space-around;
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
   @media (max-width: 768px) {
     margin-top: 10px;
     padding: 5px;
@@ -66,16 +70,11 @@ export const Card = styled.div`
       opacity: 0.2;
     }
   }
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
   img {
     width: 50px;
   }
   p {
     color: ${({ theme }) => theme.colors.primary};
-    margin: 5px 0;
   }
   @media (max-width: 768px) {
     width: 160px;

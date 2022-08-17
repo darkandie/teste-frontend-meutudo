@@ -5,6 +5,7 @@ import {
   AiOutlineUser,
   AiOutlineHome,
 } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 import { logo } from "../../assets";
 import { Header, Logo, Nav } from "./styles";
@@ -15,20 +16,28 @@ const NavBar = () => {
       <Logo src={logo} />
       <Nav>
         <li>
-          <AiOutlineHome className="icon" size={22} />
-          <p>Inicio</p>
+          <Link to="/">
+            <AiOutlineHome className="icon" size={22} />
+            <p>Inicio</p>
+          </Link>
         </li>
         <li>
-          <AiOutlineCopy className="icon" size={22} />
-          <p>Contratos</p>
+          <Link to="/">
+            <AiOutlineCopy className="icon" size={22} />
+            <p>Contratos</p>
+          </Link>
         </li>
         <li>
-          <AiOutlineQuestionCircle className="icon" size={22} />
-          <p>Dúvidas</p>
+          <Link to="/">
+            <AiOutlineQuestionCircle className="icon" size={22} />
+            <p>Dúvidas</p>
+          </Link>
         </li>
         <li>
-          <AiOutlineUser className="icon" size={22} />
-          <p>Conta</p>
+          <Link to="/">
+            <AiOutlineUser className="icon" size={22} />
+            <p>Conta</p>
+          </Link>
         </li>
       </Nav>
       <AiOutlineBell size={32} color="#fff" className="iconNav" />

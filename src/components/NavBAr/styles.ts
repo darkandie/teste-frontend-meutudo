@@ -28,6 +28,11 @@ export const Logo = styled.img`
 export const Nav = styled.ul`
   display: flex;
   align-items: center;
+  a {
+    text-decoration: none;
+    display: flex;
+    margin: 0 10px;
+  }
   li {
     list-style: none;
     display: flex;
@@ -48,6 +53,11 @@ export const Nav = styled.ul`
     bottom: 0;
     width: 100%;
     background-color: ${({ theme }) => theme.colors.fontWhite};
+    a {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
     li {
       width: 100%;
       margin-left: 0;
